@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from 'react';
 import { PaletteMode } from '@mui/material';
 import Box from '@mui/material/Box';
@@ -10,38 +12,34 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useRouter } from 'next/navigation';
 import ToggleColorMode from './ToggleColorMode';
+import { useEffect, useState } from 'react';
+import { Link } from '@mui/icons-material';
 
 const logoStyle = {
-  width: '140px',
+  width: '100px',
   height: 'auto',
   cursor: 'pointer',
 };
 
-interface AppAppBarProps {
+interface AppBarProps {
   mode: PaletteMode;
   toggleColorMode: () => void;
 }
 
-function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
-  const [open, setOpen] = React.useState(false);
+
+function CustomAppBar({ mode, toggleColorMode }: AppBarProps) {
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const sectionElement = document.getElementById(sectionId);
-    const offset = 128;
-    if (sectionElement) {
-      const targetScroll = sectionElement.offsetTop - offset;
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth',
-      });
-      setOpen(false);
-    }
+  const navigateToPage = (page: string) => {
+    router.push(page);
+    setOpen(false);
   };
 
   return (
@@ -88,51 +86,34 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               }}
             >
               <img
-                src={
-                  'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
-                }
+                src='/jus.png'
                 style={logoStyle}
-                alt="logo of sitemark"
+                alt="Jusbrasil"
+                onClick={() => navigateToPage('/')}
               />
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <MenuItem
-                  onClick={() => scrollToSection('features')}
+                  onClick={() => navigateToPage('/')}
                   sx={{ py: '6px', px: '12px' }}
-                >
+                > 
                   <Typography variant="body2" color="text.primary">
-                    Consulta Processual
+                    Início
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection('testimonials')}
+                  onClick={() => navigateToPage('/#about')}
+                  sx={{ py: '6px', px: '12px' }}
+                >
+                  <Typography variant="body2" color="text.primary">
+                    Sobre
+                  </Typography>
+                </MenuItem>
+                <MenuItem
+                  onClick={() => navigateToPage('/searchPage')}
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary">
                     Processos
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('highlights')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Highlights
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('pricing')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Pricing
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('faq')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    FAQ
                   </Typography>
                 </MenuItem>
               </Box>
@@ -145,26 +126,6 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               }}
             >
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-              <Button
-                color="primary"
-                variant="text"
-                size="small"
-                component="a"
-                href="/material-ui/getting-started/templates/sign-in/"
-                target="_blank"
-              >
-                Sign in
-              </Button>
-              <Button
-                color="primary"
-                variant="contained"
-                size="small"
-                component="a"
-                href="/material-ui/getting-started/templates/sign-up/"
-                target="_blank"
-              >
-                Sign up
-              </Button>
             </Box>
             <Box sx={{ display: { sm: '', md: 'none' } }}>
               <Button
@@ -195,44 +156,16 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                   >
                     <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                   </Box>
-                  <MenuItem onClick={() => scrollToSection('features')}>
-                    Features
+                  <MenuItem onClick={() => navigateToPage('/')}>
+                    Início
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('testimonials')}>
-                    Testimonials
+                  <MenuItem onClick={() => navigateToPage('/sobre')}>
+                    Sobre
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('highlights')}>
-                    Highlights
+                  <MenuItem onClick={() => navigateToPage('/processos')}>
+                    Processos
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('pricing')}>
-                    Pricing
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
                   <Divider />
-                  <MenuItem>
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      component="a"
-                      href="/material-ui/getting-started/templates/sign-up/"
-                      target="_blank"
-                      sx={{ width: '100%' }}
-                    >
-                      Sign up
-                    </Button>
-                  </MenuItem>
-                  <MenuItem>
-                    <Button
-                      color="primary"
-                      variant="outlined"
-                      component="a"
-                      href="/material-ui/getting-started/templates/sign-in/"
-                      target="_blank"
-                      sx={{ width: '100%' }}
-                    >
-                      Sign in
-                    </Button>
-                  </MenuItem>
                 </Box>
               </Drawer>
             </Box>
@@ -243,4 +176,4 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
   );
 }
 
-export default AppAppBar;
+export default CustomAppBar;

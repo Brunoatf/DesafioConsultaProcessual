@@ -50,21 +50,19 @@ export default function Features() {
   const selectedFeature = items[selectedItemIndex];
 
   return (
-    <Container id="features" sx={{ py: { xs: 8, sm: 16 } }}>
+    <Container id="about" sx={{ py: { xs: 8, sm: 16 } }}>
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <div>
             <Typography component="h2" variant="h4" color="text.primary">
-              Product features
+              Sobre
             </Typography>
             <Typography
               variant="body1"
               color="text.secondary"
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
-              Here you can provide a brief overview of the key features of the
-              product. For example, you could list the number of features, the types
-              of features, add-ons, or the benefits of the features.
+              Esta é minha submissão para o desafio do recrutamento da Jusbrasil. 
             </Typography>
           </div>
           <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>

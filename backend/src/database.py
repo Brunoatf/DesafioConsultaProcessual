@@ -16,7 +16,7 @@ class LawsuitDatabase:
 
     @staticmethod
     def _load_lawsuits() -> dict:
-        with open("data/lawsuits.json") as f:
+        with open("../data/lawsuits.json") as f:
             return json.load(f)
 
     @staticmethod

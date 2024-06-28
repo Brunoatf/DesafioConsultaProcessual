@@ -1,0 +1,338 @@
+[
+  {
+    "cnj": "1008126-92.2015.8.26.0132",
+    "court": "TJSP",
+    "start_date": "2015-11-09",
+    "plaintiff": "Nelson Wilians & Advogados Associados",
+    "defendant": "Construnelli IN Works Construtora e Incorpora...",
+    "movements": [
+      {
+        "movement_date": "2018-06-11",
+        "description": "Suspensão do prazo devido à alteração da tabela de feriados."
+      },
+      {
+        "movement_date": "2018-05-07",
+        "description": "Certidão de Publicação Expedida. Relação: 0109/2018. Data da Publicação: 08/05/2018. Número do Diário: 2569. Página: 2488/2503."
+      },
+      {
+        "movement_date": "2018-05-07",
+        "description": "Intimação para pagamento voluntário no prazo de 15 dias."
+      }
+    ]
+  },
+  {
+    "cnj": "0000001-01.2023.8.01.0001",
+    "court": "TJSP",
+    "start_date": "2023-01-15",
+    "plaintiff": "João Silva",
+    "defendant": "Maria Oliveira",
+    "movements": [
+      {
+        "movement_date": "2023-01-20",
+        "description": "Ação inicial protocolada e distribuída ao juiz."
+      },
+      {
+        "movement_date": "2023-01-25",
+        "description": "Contestação apresentada pelo réu, solicitando extinção do processo."
+      },
+      {
+        "movement_date": "2023-02-05",
+        "description": "Audiência de conciliação marcada para o dia 20/02/2023."
+      }
+    ]
+  },
+  {
+    "cnj": "0000002-02.2023.8.01.0002",
+    "court": "TJMG",
+    "start_date": "2023-02-01",
+    "plaintiff": "Ana Costa",
+    "defendant": "Carlos Souza",
+    "movements": [
+      {
+        "movement_date": "2023-02-05",
+        "description": "Ação inicial protocolada. Petição inicial aceita."
+      },
+      {
+        "movement_date": "2023-02-10",
+        "description": "Contestação apresentada pelo réu com novos documentos anexados."
+      },
+      {
+        "movement_date": "2023-02-20",
+        "description": "Prova pericial solicitada pelo juiz."
+      }
+    ]
+  },
+  {
+    "cnj": "0000003-03.2023.8.01.0003",
+    "court": "TJRS",
+    "start_date": "2023-03-10",
+    "plaintiff": "Pedro Lima",
+    "defendant": "Clara Mendes",
+    "movements": [
+      {
+        "movement_date": "2023-03-15",
+        "description": "Ação inicial protocolada e distribuída ao juiz da 1ª Vara Cível."
+      },
+      {
+        "movement_date": "2023-03-20",
+        "description": "Contestação apresentada pelo réu com pedido de tutela antecipada."
+      },
+      {
+        "movement_date": "2023-04-01",
+        "description": "Audiência de instrução e julgamento marcada para o dia 10/04/2023."
+      }
+    ]
+  },
+  {
+    "cnj": "0000004-04.2023.8.01.0004",
+    "court": "TJBA",
+    "start_date": "2023-04-05",
+    "plaintiff": "Lucas Almeida",
+    "defendant": "Bruna Rocha",
+    "movements": [
+      {
+        "movement_date": "2023-04-10",
+        "description": "Ação inicial protocolada. Juiz solicita manifestação do réu."
+      },
+      {
+        "movement_date": "2023-04-15",
+        "description": "Contestação apresentada, argumentando a incompetência territorial."
+      },
+      {
+        "movement_date": "2023-04-25",
+        "description": "Perícia técnica solicitada pelo juiz para avaliação de danos."
+      }
+    ]
+  },
+  {
+    "cnj": "0000005-05.2023.8.01.0005",
+    "court": "TJPE",
+    "start_date": "2023-05-20",
+    "plaintiff": "Mariana Silva",
+    "defendant": "Gustavo Santos",
+    "movements": [
+      {
+        "movement_date": "2023-05-25",
+        "description": "Ação inicial protocolada e juízo de admissibilidade realizado."
+      },
+      {
+        "movement_date": "2023-05-30",
+        "description": "Contestação apresentada com pedido de improcedência."
+      },
+      {
+        "movement_date": "2023-06-10",
+        "description": "Audiência de conciliação marcada para o dia 20/06/2023."
+      }
+    ]
+  },
+  {
+    "cnj": "0000006-06.2023.8.01.0006",
+    "court": "TJCE",
+    "start_date": "2023-06-10",
+    "plaintiff": "Felipe Oliveira",
+    "defendant": "Isabela Pereira",
+    "movements": [
+      {
+        "movement_date": "2023-06-15",
+        "description": "Ação inicial protocolada. Juiz determina citação do réu."
+      },
+      {
+        "movement_date": "2023-06-20",
+        "description": "Contestação apresentada, alegando decadência do direito."
+      },
+      {
+        "movement_date": "2023-07-01",
+        "description": "Audiência de instrução marcada para o dia 10/07/2023."
+      }
+    ]
+  },
+  {
+    "cnj": "0000007-07.2023.8.01.0007",
+    "court": "TJPR",
+    "start_date": "2023-07-01",
+    "plaintiff": "Ricardo Lima",
+    "defendant": "Patrícia Dias",
+    "movements": [
+      {
+        "movement_date": "2023-07-05",
+        "description": "Ação inicial protocolada. Réu citado para apresentação de defesa."
+      },
+      {
+        "movement_date": "2023-07-10",
+        "description": "Contestação apresentada, com reconvenção."
+      },
+      {
+        "movement_date": "2023-07-20",
+        "description": "Perícia médica solicitada pelo juiz."
+      }
+    ]
+  },
+  {
+    "cnj": "0000008-08.2023.8.01.0008",
+    "court": "TJSC",
+    "start_date": "2023-08-15",
+    "plaintiff": "Fernando Souza",
+    "defendant": "Luciana Costa",
+    "movements": [
+      {
+        "movement_date": "2023-08-20",
+        "description": "Ação inicial protocolada e autuada."
+      },
+      {
+        "movement_date": "2023-08-25",
+        "description": "Contestação apresentada pelo réu com rol de testemunhas."
+      },
+      {
+        "movement_date": "2023-09-05",
+        "description": "Audiência de instrução e julgamento marcada para o dia 15/09/2023."
+      }
+    ]
+  },
+  {
+    "cnj": "0000009-09.2023.8.01.0009",
+    "court": "TJRJ",
+    "start_date": "2023-09-10",
+    "plaintiff": "Carlos Nunes",
+    "defendant": "Renata Silva",
+    "movements": [
+      {
+        "movement_date": "2023-09-15",
+        "description": "Ação inicial protocolada. Juiz concede liminar."
+      },
+      {
+        "movement_date": "2023-09-20",
+        "description": "Contestação apresentada, impugnando a liminar."
+      },
+      {
+        "movement_date": "2023-09-30",
+        "description": "Perícia contábil solicitada para apuração de valores."
+      }
+    ]
+  },
+  {
+    "cnj": "0000010-10.2023.8.01.0010",
+    "court": "TJSP",
+    "start_date": "2023-10-01",
+    "plaintiff": "André Rodrigues",
+    "defendant": "Carla Mendes",
+    "movements": [
+      {
+        "movement_date": "2023-10-05",
+        "description": "Ação inicial protocolada com pedido de tutela de urgência."
+      },
+      {
+        "movement_date": "2023-10-10",
+        "description": "Contestação apresentada pelo réu, solicitando a revogação da tutela de urgência."
+      },
+      {
+        "movement_date": "2023-10-20",
+        "description": "Audiência de instrução e julgamento marcada para o dia 30/10/2023."
+      }
+    ]
+  },
+  {
+    "cnj": "0000011-11.2023.8.01.0011",
+    "court": "TJMG",
+    "start_date": "2023-11-10",
+    "plaintiff": "Gabriel Costa",
+    "defendant": "Daniela Oliveira",
+    "movements": [
+      {
+        "movement_date": "2023-11-15",
+        "description": "Ação inicial protocolada e autuada na 2ª Vara Cível."
+      },
+      {
+        "movement_date": "2023-11-20",
+        "description": "Contestação apresentada, alegando prescrição do direito."
+      },
+      {
+        "movement_date": "2023-11-30",
+        "description": "Perícia médica solicitada para avaliação do estado de saúde do réu."
+      }
+    ]
+  },
+  {
+    "cnj": "0000012-12.2023.8.01.0012",
+    "court": "TJRS",
+    "start_date": "2023-12-01",
+    "plaintiff": "Thiago Almeida",
+    "defendant": "Fernanda Lima",
+    "movements": [
+      {
+        "movement_date": "2023-12-05",
+        "description": "Ação inicial protocolada com pedido de indenização por danos morais."
+      },
+      {
+        "movement_date": "2023-12-10",
+        "description": "Contestação apresentada, negando os fatos alegados pelo autor."
+      },
+      {
+        "movement_date": "2023-12-20",
+        "description": "Audiência de conciliação marcada para o dia 10/01/2024."
+      }
+    ]
+  },
+  {
+    "cnj": "0000013-13.2023.8.01.0013",
+    "court": "TJPR",
+    "start_date": "2023-01-05",
+    "plaintiff": "Camila Martins",
+    "defendant": "Leonardo Silva",
+    "movements": [
+      {
+        "movement_date": "2023-01-10",
+        "description": "Ação inicial protocolada. Juiz determina citação do réu para apresentação de defesa."
+      },
+      {
+        "movement_date": "2023-01-15",
+        "description": "Contestação apresentada, alegando ausência de interesse processual."
+      },
+      {
+        "movement_date": "2023-01-25",
+        "description": "Audiência de instrução e julgamento marcada para o dia 05/02/2023."
+      }
+    ]
+  },
+  {
+    "cnj": "0000014-14.2023.8.01.0014",
+    "court": "TJBA",
+    "start_date": "2023-02-10",
+    "plaintiff": "Bruno Mendes",
+    "defendant": "Tatiana Costa",
+    "movements": [
+      {
+        "movement_date": "2023-02-15",
+        "description": "Ação inicial protocolada com pedido de urgência."
+      },
+      {
+        "movement_date": "2023-02-20",
+        "description": "Contestação apresentada pelo réu, solicitando a improcedência do pedido de urgência."
+      },
+      {
+        "movement_date": "2023-03-01",
+        "description": "Audiência de conciliação marcada para o dia 15/03/2023."
+      }
+    ]
+  },
+  {
+    "cnj": "0000015-15.2023.8.01.0015",
+    "court": "TJCE",
+    "start_date": "2023-03-20",
+    "plaintiff": "Eduardo Santos",
+    "defendant": "Larissa Almeida",
+    "movements": [
+      {
+        "movement_date": "2023-03-25",
+        "description": "Ação inicial protocolada. Juiz determina citação do réu para manifestação."
+      },
+      {
+        "movement_date": "2023-03-30",
+        "description": "Contestação apresentada pelo réu, alegando ilegitimidade passiva."
+      },
+      {
+        "movement_date": "2023-04-10",
+        "description": "Audiência de instrução e julgamento marcada para o dia 20/04/2023."
+      }
+    ]
+  }
+]

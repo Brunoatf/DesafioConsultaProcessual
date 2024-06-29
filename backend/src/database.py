@@ -17,7 +17,12 @@ class LawsuitDatabase:
     @staticmethod
     def _load_lawsuits() -> dict:
         with open("../data/lawsuits.json") as f:
-            return json.load(f)
+            lawsuits = json.load(f)
+        for lawsuit in lawsuits:
+            lawsuit["startDate"] = date.fromisoformat(lawsuit["startDate"])
+            for movement in lawsuit["movements"]:
+                movement["movementDate"] = date.fromisoformat(movement["movementDate"])
+        return lawsuits
 
     @staticmethod
     def search_lawsuits(
@@ -50,9 +55,9 @@ class LawsuitDatabase:
                 continue
             if court and lawsuit["court"] != court:
                 continue
-            if start_date_interval and lawsuit["start_date"] < start_date_interval:
+            if start_date_interval and lawsuit["startDate"] < start_date_interval:
                 continue
-            if end_date_interval and lawsuit["start_date"] > end_date_interval:
+            if end_date_interval and lawsuit["startDate"] > end_date_interval:
                 continue
             if plaintiff and lawsuit["plaintiff"] != plaintiff:
                 continue

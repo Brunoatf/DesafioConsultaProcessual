@@ -7,7 +7,7 @@ from database import LawsuitDatabase
 
 @strawberry.type
 class Movement:
-    movement_date: date
+    movementDate: date
     description: str
 
 
@@ -15,7 +15,7 @@ class Movement:
 class Lawsuit:
     cnj: str
     court: str
-    start_date: date
+    startDate: date
     plaintiff: str
     defendant: str
     movements: List[Movement]
@@ -39,12 +39,12 @@ class Query:
             Lawsuit(
                 cnj=result["cnj"],
                 court=result["court"],
-                start_date=result["start_date"],
+                startDate=result["startDate"],
                 plaintiff=result["plaintiff"],
                 defendant=result["defendant"],
                 movements=[
                     Movement(
-                        movement_date=movement["movement_date"],
+                        movementDate=movement["movementDate"],
                         description=movement["description"],
                     )
                     for movement in result["movements"]

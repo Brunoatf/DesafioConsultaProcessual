@@ -1,26 +1,34 @@
 import * as React from "react";
-import { alpha } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import SearchMenu from "./SearchMenu";
 
 export default function Hero() {
+  const theme = useTheme();
+
   return (
     <Box
       id="hero"
-      sx={(theme) => ({
+      sx={{
         width: "100%",
         height: "100vh",
-        backgroundImage:
+        background:
           theme.palette.mode === "light"
-            ? "linear-gradient(180deg, #CEE5FD, #FFF)"
-            : `linear-gradient(#02294F, ${alpha("#090E10", 0.0)})`,
-        backgroundSize: "100% 20%",
-        backgroundRepeat: "no-repeat",
-      })}
+            ? "linear-gradient(270deg, #d0ca76, #57a47c, #5987d0, #ffffff)"
+            : "linear-gradient(270deg, #7a7530, #184c31, #182c4c, #000000)",
+        backgroundSize: "400% 400%",
+        animation: "gradient 20s ease infinite",
+        "@keyframes gradient": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "25%": { backgroundPosition: "50% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "75%": { backgroundPosition: "50% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+      }}
     >
       <Container
         sx={{
@@ -33,53 +41,37 @@ export default function Hero() {
           pb: { xs: 8, sm: 12 },
         }}
       >
-        <Stack spacing={2} sx={{ width: "100%" }}>
+        <Stack
+          spacing={2}
+          sx={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            px: 2,
+          }}
+        >
           <Typography
             variant="h1"
             sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-              alignSelf: "center",
+              fontSize: "clamp(2.5rem, 8vw, 5rem)",
+              whiteSpace: { xs: "normal", sm: "nowrap" },
               textAlign: "center",
-              fontSize: "clamp(4.5rem, 12vw, 5rem)",
-              whiteSpace: "nowrap",
             }}
           >
             Consulta Processual em um clique
           </Typography>
           <Typography
+            variant="h6"
             textAlign="center"
             color="text.secondary"
-            sx={{ alignSelf: "center", width: { sm: "100%", md: "80%" } }}
+            sx={{ width: { xs: "100%", md: "80%" } }}
           >
-            Selecione um tribunal para listar os processos ou busque pelo número
-            unificado.
+            Pesquise por CNJ, tribunal, partes ou intervalo de datas. Inclua
+            mais de um desses campos em sua pesquisa para refinar a busca.
           </Typography>
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={1}
-            useFlexGap
-            alignItems="center"
-            justifyContent="center"
-            sx={{ width: "100%", pt: 2 }}
-          >
-            <TextField
-              id="outlined-basic"
-              hiddenLabel
-              size="small"
-              variant="outlined"
-              aria-label="processo"
-              placeholder="Número do processo, nome, tribunal"
-              inputProps={{
-                autoComplete: "off",
-                "aria-label": "processo",
-              }}
-              sx={{ width: { xs: "100%", sm: "70%" } }}
-            />
-            <Button variant="contained" color="primary">
-              Buscar
-            </Button>
-          </Stack>
+          <SearchMenu />
         </Stack>
       </Container>
     </Box>

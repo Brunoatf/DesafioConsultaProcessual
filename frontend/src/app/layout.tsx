@@ -1,6 +1,4 @@
 "use client";
-
-import { Inter } from "next/font/google";
 import React from "react";
 import { Divider, PaletteMode } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -10,8 +8,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 import CustomAppBar from "./components/CustomAppBar";
 import Footer from "./components/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
+import { SearchProvider } from "./contexts/SearchContext";
 
 export default function RootLayout({
   children,
@@ -27,12 +24,12 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <ThemeProvider theme={defaultTheme}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <CssBaseline />
             <CustomAppBar mode={mode} toggleColorMode={toggleColorMode} />
-            {children}
+            <SearchProvider>{children}</SearchProvider>
             <Divider />
             <Footer />
           </LocalizationProvider>

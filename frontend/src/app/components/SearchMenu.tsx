@@ -1,26 +1,95 @@
-import * as React from "react";
-import { useState } from "react";
+import React from "react";
 import { Button, Stack, TextField, Typography } from "@mui/material";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useRouter } from "next/navigation";
+import { useSearchContext } from "../contexts/SearchContext";
+import axios from "axios";
 
 export default function SearchMenu() {
-  const [cnj, setCnj] = useState("");
-  const [court, setCourt] = useState("");
-  const [plaintiff, setPlaintiff] = useState("");
-  const [defendant, setDefendant] = useState("");
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
-  const [warning, setWarning] = useState(false);
+  const {
+    cnj,
+    setCnj,
+    court,
+    setCourt,
+    plaintiff,
+    setPlaintiff,
+    defendant,
+    setDefendant,
+    startDate,
+    setStartDate,
+    endDate,
+    setEndDate,
+    warning,
+    setWarning,
+  } = useSearchContext();
 
   const router = useRouter();
+
+  const { setReturnedData } = useSearchContext();
+
+  const query = `
+    query lawsuit($cnj: String, $court: String, $startDateInterval: Date, $endDateInterval: Date, $plaintiff: String, $defendant: String) {
+      lawsuit(cnj: $cnj, court: $court, startDateInterval: $startDateInterval, endDateInterval: $endDateInterval, plaintiff: $plaintiff, defendant: $defendant) {
+        cnj
+        court
+        startDate
+        plaintiff
+        defendant
+        movements {
+          movementDate
+          description
+        }
+      }
+    }
+  `;
+
+  const fetchData = async () => {
+    const variables = {
+      ...(cnj && { cnj }),
+      ...(court && { court }),
+      ...(startDate && { startDateInterval: startDate.toDate() }),
+      ...(endDate && { endDateInterval: endDate.toDate() }),
+      ...(plaintiff && { plaintiff }),
+      ...(defendant && { defendant }),
+    };
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/graphql",
+        {
+          query,
+          variables,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+
+      if (response.data.errors) {
+        console.error(
+          response.data.errors.map((err) => err.message).join(", "),
+        );
+      } else {
+        console.log(response.data.data.lawsuit);
+        const data = response.data.data.lawsuit;
+        console.log(data)
+
+        setReturnedData(data)
+      }
+    } catch (err) {
+      console.error("Error:", err.message);
+    }
+  };
 
   function processSearch() {
     if (!cnj && !court && !plaintiff && !defendant && !startDate && !endDate) {
       setWarning(true);
     } else {
       setWarning(false);
+      fetchData();
       router.push("/searchPage");
     }
   }
@@ -32,7 +101,7 @@ export default function SearchMenu() {
         spacing={1}
         alignItems="center"
         justifyContent="center"
-        width={{ xs: "90%", sm: "100%" }}
+        width="100%"
       >
         <Stack
           direction="row"
@@ -149,9 +218,13 @@ export default function SearchMenu() {
           </Button>
         </Stack>
       </Stack>
-      <Typography>
-        {warning ? "Preencha ao menos um campo para realizar a busca" : ""}
-      </Typography>
+      {
+        warning ?
+        <Typography textAlign="center" marginTop="10px">
+          Preencha ao menos um campo para realizar a busca
+        </Typography>
+        : null
+      }
     </LocalizationProvider>
   );
 }

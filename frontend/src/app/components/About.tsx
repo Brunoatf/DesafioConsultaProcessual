@@ -59,7 +59,7 @@ export default function Features() {
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <div>
-            <Typography component="h2" variant="h4" color="text.primary">
+            <Typography component="h2" variant="h2" color="text.primary">
               Sobre
             </Typography>
             <Typography
@@ -68,7 +68,15 @@ export default function Features() {
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
               Esta é minha submissão para o desafio do recrutamento da
-              Jusbrasil.
+              Jusbrasil. Informações mais detalhadas sobre a implementação podem
+              ser encontradas no arquivo COMMENTS.md no repositório do projeto.
+            </Typography>
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{ mb: { xs: 2, sm: 4 } }}
+            >
+              Para que o avaliador possa melhor utilizar a aplicação, ao lado é possível explorar os dados dos processos fictícios que podem ser consultados.
             </Typography>
           </div>
           <Grid

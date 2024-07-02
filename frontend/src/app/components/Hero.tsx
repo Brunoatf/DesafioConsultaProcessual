@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import SearchMenu from "./SearchMenu";
@@ -28,52 +27,47 @@ export default function Hero() {
           "75%": { backgroundPosition: "50% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
         },
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        py: { xs: 8, sm: 12 },
       }}
     >
-      <Container
+      <Stack
+        spacing={2}
         sx={{
+          width: "100%",
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "100%",
-          pt: { xs: 8, sm: 12 },
-          pb: { xs: 8, sm: 12 },
+          textAlign: "center",
+          px: 2,
         }}
       >
-        <Stack
-          spacing={2}
+        <Typography
+          variant="h1"
           sx={{
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            fontSize: "clamp(2.5rem, 8vw, 5rem)",
+            whiteSpace: { xs: "normal" },
             textAlign: "center",
-            px: 2,
           }}
         >
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: "clamp(2.5rem, 8vw, 5rem)",
-              whiteSpace: { xs: "normal", sm: "nowrap" },
-              textAlign: "center",
-            }}
-          >
-            Consulta Processual em um clique
-          </Typography>
-          <Typography
-            variant="h6"
-            textAlign="center"
-            color="text.secondary"
-            sx={{ width: { xs: "100%", md: "80%" } }}
-          >
-            Pesquise por CNJ, tribunal, partes ou intervalo de datas. Inclua
-            mais de um desses campos em sua pesquisa para refinar a busca.
-          </Typography>
+          Consulta Processual em um clique
+        </Typography>
+        <Typography
+          variant="h6"
+          textAlign="center"
+          color="text.secondary"
+          sx={{ width: { xs: "100%", md: "80%" } }}
+        >
+          Pesquise por CNJ, tribunal, partes ou intervalo de datas. Inclua mais
+          de um desses campos em sua pesquisa para refinar a busca.
+        </Typography>
+        <Box width="70%">
           <SearchMenu />
-        </Stack>
-      </Container>
+        </Box>
+      </Stack>
     </Box>
   );
 }

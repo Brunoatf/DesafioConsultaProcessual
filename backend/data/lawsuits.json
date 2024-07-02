@@ -38,6 +38,10 @@
       {
         "movementDate": "2023-02-20",
         "description": "Prova pericial solicitada pelo juiz."
+      },
+      {
+        "movementDate": "2023-03-01",
+        "description": "Despacho proferido pelo juiz, solicitando documentos adicionais."
       }
     ]
   },
@@ -59,6 +63,14 @@
       {
         "movementDate": "2023-02-05",
         "description": "Audiência de conciliação marcada para o dia 20/02/2023."
+      },
+      {
+        "movementDate": "2023-02-15",
+        "description": "Juiz solicita manifestação do autor sobre a contestação."
+      },
+      {
+        "movementDate": "2023-03-01",
+        "description": "Decisão proferida pelo juiz, indeferindo o pedido de extinção."
       }
     ]
   },
@@ -80,6 +92,14 @@
       {
         "movementDate": "2023-02-20",
         "description": "Prova pericial solicitada pelo juiz."
+      },
+      {
+        "movementDate": "2023-03-05",
+        "description": "Audiência de conciliação marcada para o dia 15/03/2023."
+      },
+      {
+        "movementDate": "2023-03-20",
+        "description": "Relatório pericial apresentado pelo perito."
       }
     ]
   },
@@ -93,14 +113,6 @@
       {
         "movementDate": "2023-03-15",
         "description": "Ação inicial protocolada e distribuída ao juiz da 1ª Vara Cível."
-      },
-      {
-        "movementDate": "2023-03-20",
-        "description": "Contestação apresentada pelo réu com pedido de tutela antecipada."
-      },
-      {
-        "movementDate": "2023-04-01",
-        "description": "Audiência de instrução e julgamento marcada para o dia 10/04/2023."
       }
     ]
   },
@@ -118,10 +130,6 @@
       {
         "movementDate": "2023-04-15",
         "description": "Contestação apresentada, argumentando a incompetência territorial."
-      },
-      {
-        "movementDate": "2023-04-25",
-        "description": "Perícia técnica solicitada pelo juiz para avaliação de danos."
       }
     ]
   },
@@ -143,6 +151,14 @@
       {
         "movementDate": "2023-06-10",
         "description": "Audiência de conciliação marcada para o dia 20/06/2023."
+      },
+      {
+        "movementDate": "2023-06-15",
+        "description": "Pedido de produção de prova pericial pelo autor."
+      },
+      {
+        "movementDate": "2023-06-20",
+        "description": "Despacho do juiz sobre o pedido de produção de prova."
       }
     ]
   },
@@ -181,10 +197,6 @@
       {
         "movementDate": "2023-07-10",
         "description": "Contestação apresentada, com reconvenção."
-      },
-      {
-        "movementDate": "2023-07-20",
-        "description": "Perícia médica solicitada pelo juiz."
       }
     ]
   },
@@ -206,6 +218,14 @@
       {
         "movementDate": "2023-09-05",
         "description": "Audiência de instrução e julgamento marcada para o dia 15/09/2023."
+      },
+      {
+        "movementDate": "2023-09-20",
+        "description": "Prova pericial apresentada pelo perito."
+      },
+      {
+        "movementDate": "2023-10-01",
+        "description": "Decisão do juiz sobre a prova pericial."
       }
     ]
   },
@@ -227,6 +247,14 @@
       {
         "movementDate": "2023-09-30",
         "description": "Perícia contábil solicitada para apuração de valores."
+      },
+      {
+        "movementDate": "2023-10-10",
+        "description": "Audiência de conciliação marcada para o dia 20/10/2023."
+      },
+      {
+        "movementDate": "2023-10-20",
+        "description": "Manifestação do autor sobre a contestação."
       }
     ]
   },
@@ -244,10 +272,6 @@
       {
         "movementDate": "2023-10-10",
         "description": "Contestação apresentada pelo réu, solicitando a revogação da tutela de urgência."
-      },
-      {
-        "movementDate": "2023-10-20",
-        "description": "Audiência de instrução e julgamento marcada para o dia 30/10/2023."
       }
     ]
   },
@@ -269,6 +293,10 @@
       {
         "movementDate": "2023-11-30",
         "description": "Perícia médica solicitada para avaliação do estado de saúde do réu."
+      },
+      {
+        "movementDate": "2023-12-10",
+        "description": "Relatório médico apresentado pelo perito."
       }
     ]
   },
@@ -290,6 +318,14 @@
       {
         "movementDate": "2023-12-20",
         "description": "Audiência de conciliação marcada para o dia 10/01/2024."
+      },
+      {
+        "movementDate": "2024-01-15",
+        "description": "Relatório de conciliação apresentado pelo conciliador."
+      },
+      {
+        "movementDate": "2024-02-01",
+        "description": "Decisão do juiz sobre a conciliação."
       }
     ]
   },
@@ -311,6 +347,14 @@
       {
         "movementDate": "2023-01-25",
         "description": "Audiência de instrução e julgamento marcada para o dia 05/02/2023."
+      },
+      {
+        "movementDate": "2023-02-10",
+        "description": "Manifestação do autor sobre a contestação."
+      },
+      {
+        "movementDate": "2023-02-20",
+        "description": "Decisão do juiz sobre o interesse processual."
       }
     ]
   },
@@ -332,6 +376,14 @@
       {
         "movementDate": "2023-03-01",
         "description": "Audiência de conciliação marcada para o dia 15/03/2023."
+      },
+      {
+        "movementDate": "2023-03-20",
+        "description": "Decisão sobre o pedido de urgência."
+      },
+      {
+        "movementDate": "2023-04-01",
+        "description": "Relatório de conciliação apresentado pelo conciliador."
       }
     ]
   },
@@ -345,14 +397,6 @@
       {
         "movementDate": "2023-03-25",
         "description": "Ação inicial protocolada. Juiz determina citação do réu para manifestação."
-      },
-      {
-        "movementDate": "2023-03-30",
-        "description": "Contestação apresentada pelo réu, alegando ilegitimidade passiva."
-      },
-      {
-        "movementDate": "2023-04-10",
-        "description": "Audiência de instrução e julgamento marcada para o dia 20/04/2023."
       }
     ]
   }

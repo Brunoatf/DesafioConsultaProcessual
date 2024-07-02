@@ -32,6 +32,8 @@ interface SearchContextProps {
   setWarning: React.Dispatch<React.SetStateAction<boolean>>;
   returnedData: IReturnedData[] | null;
   setReturnedData: React.Dispatch<React.SetStateAction<IReturnedData[] | null>>;
+  hasSearched: boolean;
+  setHasSearched: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const defaultState: SearchContextProps = {
@@ -51,6 +53,8 @@ const defaultState: SearchContextProps = {
   setWarning: () => {},
   returnedData: null,
   setReturnedData: () => {},
+  hasSearched: false,
+  setHasSearched: () => {}
 };
 
 const SearchContext = createContext<SearchContextProps>(defaultState);
@@ -68,6 +72,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
   const [endDate, setEndDate] = useState<Dayjs | null>(null);
   const [warning, setWarning] = useState<boolean>(false);
   const [returnedData, setReturnedData] = useState<IReturnedData[] | null>(null);
+  const [hasSearched, setHasSearched] = useState<boolean>(false);
 
   const value = {
     cnj,
@@ -86,6 +91,8 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
     setWarning,
     returnedData,
     setReturnedData,
+    hasSearched,
+    setHasSearched
   };
 
   return (

@@ -160,10 +160,10 @@ function CustomAppBar({ mode, toggleColorMode }: AppBarProps) {
                   <MenuItem onClick={() => navigateToPage("/")}>
                     Início
                   </MenuItem>
-                  <MenuItem onClick={() => navigateToPage("/sobre")}>
+                  <MenuItem onClick={() => navigateToPage("/#about")}>
                     Sobre
                   </MenuItem>
-                  <MenuItem onClick={() => navigateToPage("/processos")}>
+                  <MenuItem onClick={() => navigateToPage("/searchPage")}>
                     Processos
                   </MenuItem>
                   <Divider />

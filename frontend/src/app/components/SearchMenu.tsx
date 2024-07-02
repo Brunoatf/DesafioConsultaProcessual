@@ -26,7 +26,7 @@ export default function SearchMenu() {
 
   const router = useRouter();
 
-  const { setReturnedData } = useSearchContext();
+  const { setReturnedData, setHasSearched } = useSearchContext();
 
   const query = `
     query lawsuit($cnj: String, $court: String, $startDateInterval: Date, $endDateInterval: Date, $plaintiff: String, $defendant: String) {
@@ -89,6 +89,7 @@ export default function SearchMenu() {
       setWarning(true);
     } else {
       setWarning(false);
+      setHasSearched(true);
       fetchData();
       router.push("/searchPage");
     }

@@ -26,7 +26,7 @@ import { format } from "date-fns";
 
 
 export default function SearchPage() {
-  const { returnedData } = useSearchContext();
+  const { returnedData, hasSearched } = useSearchContext();
   const theme = useTheme();
 
   return (
@@ -71,86 +71,90 @@ export default function SearchPage() {
           <SearchMenu />
         </Box>
       </Stack>
-      {returnedData !== null && returnedData.length > 0 ? (
-        <Stack spacing={3} width="100%" paddingX="5%" >
-          <Typography alignSelf="center" variant="h4" color="text.primary">
-            Mostrando {returnedData.length} resultados para a sua consulta
-          </Typography>
-          <Divider />
-          {returnedData.map((data, index) => (
-            <React.Fragment key={index}>
-              <Typography variant="h4">Processo n. {data.cnj}</Typography>
-              <Stack direction={{xs: "column", sm: "row"}} spacing={2}>
-                <List sx={{ width: {xs: "100%", sm: "50%"} }}>
-                  <ListItem>
-                    <ListItemAvatar>
-                      <Avatar sx={{ bgcolor: "primary.main" }}>
-                        <EventIcon />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary="Data de início"
-                      secondary={format(data.startDate.toString(), "dd/MM/yyyy")}
-                    />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemAvatar>
-                      <Avatar sx={{ bgcolor: "primary.main" }}>
-                        <GavelIcon />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary="Tribunal" secondary={data.court} />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemAvatar>
-                      <Avatar sx={{ bgcolor: "primary.main" }}>
-                        <PersonIcon />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary="Autor" secondary={data.plaintiff} />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemAvatar>
-                      <Avatar sx={{ bgcolor: "primary.main" }}>
-                        <PersonIcon />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary="Réu" secondary={data.defendant} />
-                  </ListItem>
-                </List>
-                <TableContainer component={Paper} sx={{width: {xs: "100%", sm: "50%"}}}>
-                  <Table aria-label="simple table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell>Movimentações</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {data.movements.map((movement, index) => (
-                        <TableRow key={index}>
-                          <TableCell align="left">
-                            <Typography variant="body1">
-                              {format(movement.movementDate.toString(), "dd/MM/yyyy")}
-                            </Typography>
-                            <Typography variant="body2">
-                              {movement.description}
-                            </Typography>
-                          </TableCell>
+      {hasSearched ?
+        returnedData && returnedData.length > 0 ? (
+          <Stack spacing={3} width="100%" paddingX="5%" >
+            <Typography alignSelf="center" variant="h4" color="text.primary">
+              Mostrando {returnedData.length} resultados para a sua consulta
+            </Typography>
+            <Divider />
+            {returnedData.map((data, index) => (
+              <React.Fragment key={index}>
+                <Typography variant="h4">Processo n. {data.cnj}</Typography>
+                <Stack direction={{xs: "column", sm: "row"}} spacing={2}>
+                  <List sx={{ width: {xs: "100%", sm: "50%"} }}>
+                    <ListItem>
+                      <ListItemAvatar>
+                        <Avatar sx={{ bgcolor: "primary.main" }}>
+                          <EventIcon />
+                        </Avatar>
+                      </ListItemAvatar>
+                      <ListItemText
+                        primary="Data de início"
+                        secondary={format(data.startDate.toString(), "dd/MM/yyyy")}
+                      />
+                    </ListItem>
+                    <ListItem>
+                      <ListItemAvatar>
+                        <Avatar sx={{ bgcolor: "primary.main" }}>
+                          <GavelIcon />
+                        </Avatar>
+                      </ListItemAvatar>
+                      <ListItemText primary="Tribunal" secondary={data.court} />
+                    </ListItem>
+                    <ListItem>
+                      <ListItemAvatar>
+                        <Avatar sx={{ bgcolor: "primary.main" }}>
+                          <PersonIcon />
+                        </Avatar>
+                      </ListItemAvatar>
+                      <ListItemText primary="Autor" secondary={data.plaintiff} />
+                    </ListItem>
+                    <ListItem>
+                      <ListItemAvatar>
+                        <Avatar sx={{ bgcolor: "primary.main" }}>
+                          <PersonIcon />
+                        </Avatar>
+                      </ListItemAvatar>
+                      <ListItemText primary="Réu" secondary={data.defendant} />
+                    </ListItem>
+                  </List>
+                  <TableContainer component={Paper} sx={{width: {xs: "100%", sm: "50%"}}}>
+                    <Table aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Movimentações</TableCell>
                         </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-              </Stack>
-              <Divider />
-            </React.Fragment>
-          ))}
-        </Stack>
-      ) : (
-        <Typography alignSelf="center" variant="h4" color="text.primary">
-          Sua consulta não gerou resultados
-        </Typography>
-      )}
+                      </TableHead>
+                      <TableBody>
+                        {data.movements.map((movement, index) => (
+                          <TableRow key={index}>
+                            <TableCell align="left">
+                              <Typography variant="body1">
+                                {format(movement.movementDate.toString(), "dd/MM/yyyy")}
+                              </Typography>
+                              <Typography variant="body2">
+                                {movement.description}
+                              </Typography>
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </Stack>
+                <Divider />
+              </React.Fragment>
+            ))}
+          </Stack>
+        )
+          :
+        (
+          <Typography alignSelf="center" variant="h4" color="text.primary" textAlign="center" paddingX="5%" paddingY="1%">
+            Sua consulta não gerou resultados
+          </Typography>
+        )
+        : null}
     </Stack>
   );
 }

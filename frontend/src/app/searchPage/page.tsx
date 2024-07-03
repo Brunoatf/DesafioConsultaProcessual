@@ -30,10 +30,7 @@ export default function SearchPage() {
   const theme = useTheme();
 
   return (
-    <Stack
-      spacing={3}
-      height="auto"
-    >
+    <Stack spacing={3} height="auto">
       <Stack
         direction={{ xs: "column", sm: "row" }}
         display="flex"
@@ -44,9 +41,9 @@ export default function SearchPage() {
         spacing={3}
         sx={{
           background:
-          theme.palette.mode === "light"
-            ? "linear-gradient(270deg, #d0ca76, #57a47c, #5987d0, #ffffff)"
-            : "linear-gradient(270deg, #7a7530, #184c31, #182c4c, #000000)",
+            theme.palette.mode === "light"
+              ? "linear-gradient(270deg, #497fd6, #42b378, #d0ca76, #ffffff)"
+              : "linear-gradient(270deg, #7a7530, #184c31, #182c4c, #000000)",
           backgroundSize: "400% 400%",
           animation: "gradient 20s ease infinite",
           "@keyframes gradient": {
@@ -58,7 +55,7 @@ export default function SearchPage() {
           },
         }}
       >
-        <Box width={{xs: "90%", sm: "45%"}} justifyContent="center">
+        <Box width={{ xs: "90%", sm: "45%" }} justifyContent="center">
           <Typography component="h1" variant="h2" color="text.primary">
             Consulta Processual
           </Typography>
@@ -67,13 +64,13 @@ export default function SearchPage() {
             mais de um desses campos em sua pesquisa para refinar a busca.
           </Typography>
         </Box>
-        <Box width={{xs: "90%", sm: "45%"}}>
+        <Box width={{ xs: "90%", sm: "45%" }}>
           <SearchMenu />
         </Box>
       </Stack>
-      {hasSearched ?
+      {hasSearched ? (
         returnedData && returnedData.length > 0 ? (
-          <Stack spacing={3} width="100%" paddingX="5%" >
+          <Stack spacing={3} width="100%" paddingX="5%">
             <Typography alignSelf="center" variant="h4" color="text.primary">
               Mostrando {returnedData.length} resultados para a sua consulta
             </Typography>
@@ -81,8 +78,8 @@ export default function SearchPage() {
             {returnedData.map((data, index) => (
               <React.Fragment key={index}>
                 <Typography variant="h4">Processo n. {data.cnj}</Typography>
-                <Stack direction={{xs: "column", sm: "row"}} spacing={2}>
-                  <List sx={{ width: {xs: "100%", sm: "50%"} }}>
+                <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+                  <List sx={{ width: { xs: "100%", sm: "50%" } }}>
                     <ListItem>
                       <ListItemAvatar>
                         <Avatar sx={{ bgcolor: "primary.main" }}>
@@ -91,7 +88,10 @@ export default function SearchPage() {
                       </ListItemAvatar>
                       <ListItemText
                         primary="Data de início"
-                        secondary={format(data.startDate.toString(), "dd/MM/yyyy")}
+                        secondary={format(
+                          data.startDate.toString(),
+                          "dd/MM/yyyy",
+                        )}
                       />
                     </ListItem>
                     <ListItem>
@@ -108,7 +108,10 @@ export default function SearchPage() {
                           <PersonIcon />
                         </Avatar>
                       </ListItemAvatar>
-                      <ListItemText primary="Autor" secondary={data.plaintiff} />
+                      <ListItemText
+                        primary="Autor"
+                        secondary={data.plaintiff}
+                      />
                     </ListItem>
                     <ListItem>
                       <ListItemAvatar>
@@ -119,7 +122,10 @@ export default function SearchPage() {
                       <ListItemText primary="Réu" secondary={data.defendant} />
                     </ListItem>
                   </List>
-                  <TableContainer component={Paper} sx={{width: {xs: "100%", sm: "50%"}}}>
+                  <TableContainer
+                    component={Paper}
+                    sx={{ width: { xs: "100%", sm: "50%" } }}
+                  >
                     <Table aria-label="simple table">
                       <TableHead>
                         <TableRow>
@@ -131,7 +137,10 @@ export default function SearchPage() {
                           <TableRow key={index}>
                             <TableCell align="left">
                               <Typography variant="body1">
-                                {format(movement.movementDate.toString(), "dd/MM/yyyy")}
+                                {format(
+                                  movement.movementDate.toString(),
+                                  "dd/MM/yyyy",
+                                )}
                               </Typography>
                               <Typography variant="body2">
                                 {movement.description}
@@ -147,14 +156,19 @@ export default function SearchPage() {
               </React.Fragment>
             ))}
           </Stack>
-        )
-          :
-        (
-          <Typography alignSelf="center" variant="h4" color="text.primary" textAlign="center" paddingX="5%" paddingY="1%">
+        ) : (
+          <Typography
+            alignSelf="center"
+            variant="h4"
+            color="text.primary"
+            textAlign="center"
+            paddingX="5%"
+            paddingY="1%"
+          >
             Sua consulta não gerou resultados
           </Typography>
         )
-        : null}
+      ) : null}
     </Stack>
   );
 }

@@ -1,5 +1,9 @@
 # Desafio de Consulta Processual
 
+![Print1](/printLandingPage.png)
+
+![Print2](/printSearchPage.png)
+
 Este é meu projeto para o desafio de consulta processual da Jusbrasil.
 
 Informações detalhadas sobre a implementação podem ser encontradas no arquivo `COMMENTS.md`, enquanto aqui tem-se apenas as instruções para execução e documentação da estrutura do projeto.
@@ -14,7 +18,7 @@ Uma maneira rápida de testar é pesquisar primeiro por tribunal, como `TJSP`, `
 
 1 - Clone este repositório para sua máquina
 
-2 - Certifique-se que sua máquina possui [Docker]() instalado. Se não, utilize a documentação oficial para instalar.
+2 - Certifique-se que sua máquina possui [Docker](https://www.docker.com/) instalado. Se não, utilize a documentação oficial para instalar.
 
 3 - Abra o terminal na pasta raiz do projeto e execute `docker compose up`
 
@@ -24,7 +28,7 @@ Uma maneira rápida de testar é pesquisar primeiro por tribunal, como `TJSP`, `
 
 #### Back-end
 
-1 - Instale o [Poetry](), caso não possua
+1 - Instale o [Poetry](https://python-poetry.org/), caso não possua
 
 2 - Vá para o diretório `backend`, executando  `cd backend`
 

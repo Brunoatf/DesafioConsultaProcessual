@@ -16,7 +16,7 @@ export default function Hero() {
         height: "100vh",
         background:
           theme.palette.mode === "light"
-            ? "linear-gradient(270deg, #d0ca76, #57a47c, #5987d0, #ffffff)"
+            ? "linear-gradient(270deg, #497fd6, #42b378, #d0ca76, #ffffff)"
             : "linear-gradient(270deg, #7a7530, #184c31, #182c4c, #000000)",
         backgroundSize: "400% 400%",
         animation: "gradient 20s ease infinite",

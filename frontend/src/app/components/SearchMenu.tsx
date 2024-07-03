@@ -141,7 +141,7 @@ export default function SearchMenu() {
             aria-label="court"
             placeholder="Tribunal (Ex.: TJSP)"
             value={court}
-            onChange={(e) => setCourt(e.target.value)}
+            onChange={(e) => setCourt(e.target.value.toUpperCase())}
             inputProps={{
               autoComplete: "off",
               "aria-label": "court",

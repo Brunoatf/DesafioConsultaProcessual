@@ -1,8 +1,8 @@
 # Comentários sobre a implementação do projeto
 
-Organizei o repositório em 2 principais diretórios - `backend`e `frontend` - cada um contendo as aplicações isoladas para o Front-end e o Back-end do projeto. Cada uma dessas aplicações pode ser executada em um container Docker segundo os arquivos `Dockerfile` presentes nos diretórios. Já o arquivo `compose.yml` na raíz do projeto permite que as aplicações sejam executadas em conjunto.
+Organizei o repositório em 2 principais diretórios - `backend`e `frontend` - cada um contendo as aplicações isoladas para o Front-end e o Back-end do projeto. Cada uma dessas aplicações pode ser executada em um container Docker segundo os arquivos `Dockerfile` presentes nos diretórios. Já o arquivo `compose.yml` na raiz do projeto permite que as aplicações sejam executadas em conjunto.
 
-Alguns arquivos, como `.pre-commit-config.yaml` e `.flake8` precisaram ser movidos para a raíz do projeto por necessidade das ferramentas que os utilizam, ainda que, na prática, só sejam usados pelo back-end.
+Alguns arquivos, como `.pre-commit-config.yaml` e `.flake8` precisaram ser movidos para a raiz do projeto por necessidade das ferramentas que os utilizam, ainda que, na prática, só sejam usados pelo back-end.
 
 Busquei implementar o projeto de modo similar ao que faria em um cenário de trabalho real. Contudo, tomei liberdade para fazer as seguintes simplificações:
 
@@ -67,9 +67,9 @@ Utilizei o framework [pre-commit](https://pre-commit.com/) para configurar hooks
 As hooks que utilizei foram:
 
 - [Flake 8](https://flake8.pycqa.org/en/latest/) : ferramenta de linting que verifica se o código está de acordo com a PEP8 do Python.
-- [Black]() : formatter que padroniza o estilo do código de acordo com a PEP8.
-- [iSort]() : realiza uma ordenação das importações de cada arquivo `.py`, prezando por organização e legibilidade.
-- [pre-commit-hooks]() : Conjunto de hooks padrão do framework. Utilizei os seguintes:
+- [Black](https://github.com/psf/black) : formatter que padroniza o estilo do código de acordo com a PEP8.
+- [iSort](https://pycqa.github.io/isort/) : realiza uma ordenação das importações de cada arquivo `.py`, prezando por organização e legibilidade.
+- [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks) : Conjunto de hooks padrão do framework. Utilizei os seguintes:
   - **trailing-whitespace**: remove whitespaces no final de linhas
   - **end-of-file-fixer**: garante que todo arquivo termine com uma linha vazia
   - **check-yaml**: checa a sintaxe de arquivos `.yaml`

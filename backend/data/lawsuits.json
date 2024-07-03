@@ -21,97 +21,97 @@
     ]
   },
   {
-    "cnj": "0000322-02.2023.8.01.0545",
+    "cnj": "0000322-02.2020.8.01.0545",
     "court": "TJMG",
-    "startDate": "2023-02-01",
+    "startDate": "2020-02-01",
     "plaintiff": "Nelson Wilians & Advogados Associados",
     "defendant": "João da Silva",
     "movements": [
       {
-        "movementDate": "2023-02-05",
+        "movementDate": "2020-02-05",
         "description": "Ação inicial protocolada. Petição inicial aceita."
       },
       {
-        "movementDate": "2023-02-10",
+        "movementDate": "2020-02-10",
         "description": "Contestação apresentada pelo réu com novos documentos anexados."
       },
       {
-        "movementDate": "2023-02-20",
+        "movementDate": "2020-02-20",
         "description": "Prova pericial solicitada pelo juiz."
       },
       {
-        "movementDate": "2023-03-01",
+        "movementDate": "2020-03-01",
         "description": "Despacho proferido pelo juiz, solicitando documentos adicionais."
       }
     ]
   },
   {
-    "cnj": "0000001-01.2023.8.01.0001",
+    "cnj": "0000001-01.2019.8.01.0001",
     "court": "TJSP",
-    "startDate": "2023-01-15",
+    "startDate": "2019-01-15",
     "plaintiff": "João Silva",
     "defendant": "Maria Oliveira",
     "movements": [
       {
-        "movementDate": "2023-01-20",
+        "movementDate": "2019-01-20",
         "description": "Ação inicial protocolada e distribuída ao juiz."
       },
       {
-        "movementDate": "2023-01-25",
+        "movementDate": "2019-01-25",
         "description": "Contestação apresentada pelo réu, solicitando extinção do processo."
       },
       {
-        "movementDate": "2023-02-05",
+        "movementDate": "2019-02-05",
         "description": "Audiência de conciliação marcada para o dia 20/02/2023."
       },
       {
-        "movementDate": "2023-02-15",
+        "movementDate": "2019-02-15",
         "description": "Juiz solicita manifestação do autor sobre a contestação."
       },
       {
-        "movementDate": "2023-03-01",
+        "movementDate": "2019-03-01",
         "description": "Decisão proferida pelo juiz, indeferindo o pedido de extinção."
       }
     ]
   },
   {
-    "cnj": "0000002-02.2023.8.01.0002",
+    "cnj": "0000002-02.2010.8.01.0002",
     "court": "TJMG",
-    "startDate": "2023-02-01",
+    "startDate": "2010-02-01",
     "plaintiff": "Ana Costa",
     "defendant": "Carlos Souza",
     "movements": [
       {
-        "movementDate": "2023-02-05",
+        "movementDate": "2010-02-05",
         "description": "Ação inicial protocolada. Petição inicial aceita."
       },
       {
-        "movementDate": "2023-02-10",
+        "movementDate": "2010-02-10",
         "description": "Contestação apresentada pelo réu com novos documentos anexados."
       },
       {
-        "movementDate": "2023-02-20",
+        "movementDate": "2010-02-20",
         "description": "Prova pericial solicitada pelo juiz."
       },
       {
-        "movementDate": "2023-03-05",
+        "movementDate": "2010-03-05",
         "description": "Audiência de conciliação marcada para o dia 15/03/2023."
       },
       {
-        "movementDate": "2023-03-20",
+        "movementDate": "2010-03-20",
         "description": "Relatório pericial apresentado pelo perito."
       }
     ]
   },
   {
-    "cnj": "0000003-03.2023.8.01.0003",
+    "cnj": "0000003-03.1999.8.01.0003",
     "court": "TJRS",
-    "startDate": "2023-03-10",
+    "startDate": "1999-03-10",
     "plaintiff": "Pedro Lima",
     "defendant": "Clara Mendes",
     "movements": [
       {
-        "movementDate": "2023-03-15",
+        "movementDate": "1999-03-15",
         "description": "Ação inicial protocolada e distribuída ao juiz da 1ª Vara Cível."
       }
     ]

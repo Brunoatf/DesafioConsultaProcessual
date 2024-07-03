@@ -4,7 +4,7 @@ import * as React from "react";
 import Divider from "@mui/material/Divider";
 import Hero from "./components/Hero";
 import { Box, Stack } from "@mui/material";
-import Features from "./components/About";
+import About from "./components/About";
 
 export default function LandingPage() {
   return (
@@ -12,7 +12,7 @@ export default function LandingPage() {
       <Hero />
       <Divider />
       <Box>
-        <Features />
+        <About />
       </Box>
     </Stack>
   );

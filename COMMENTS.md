@@ -30,6 +30,14 @@ Ambas as ferramentas foram utilizadas em conjunto com suas extensões do Visual 
 
 De modo a garantir que não estou realizando commits com problemas de estilo ou qualidade de código, utilizei o software [Husky](https://typicode.github.io/husky/) em conjunto com o [lint-staged](https://github.com/lint-staged/lint-staged) para executar o ESlint e o Prettier durante todo commit. Nesse contexto, commits com alterações identificadas como problemáticas pelo ESlint são suspensos até que os problemas sejam corrigidos.
 
+## Ambiente de desenvolvimento
+
+Desenvolvi a aplicação utilizando o [Node](https://nodejs.org/pt) como ambiente de execução e o Node Package Manager como gerenciador de dependências.
+
+## Testes
+
+Para a realização de testes, utilizei o framework [Jest](https://jestjs.io/pt-BR/), [conforme sugerido pela documentação do Next](https://nextjs.org/docs/app/building-your-application/testing/jest). Busquei testar a renderização dos elementos nas 2 páginas do projeto, além do processamento correto do estado que guarda os dados de processos judiciais retornados pelo back-end.
+
 # Back-end
 
 ## Implementação
@@ -77,9 +85,9 @@ Busquei realizar testes incluindo queries com diferentes combinações dos filtr
 
 Ainda que o projeto não possua um prazo rígido, optei por não deixar passar mais de 1 semana entre o meu primeiro e último commit.
 
-Caso fosse realizar mais modificações, poderia tornar a aplicação mais próxima de um cenário real ao integrar um banco de dados para armazenar as informações dos processos.
+Caso fosse realizar mais modificações, iria expandir os testes realizados e tornar a aplicação mais próxima de um cenário real ao integrar um banco de dados para armazenar as informações dos processos.
 
-Outro ponto que poderia ser melhor trabalho é a pesquisa. Enquanto esta aplicação faz simplesmente uma busca com GraphQL, um retriever de documentos baseado em transformers poderia ser utilizado.
+Outro ponto que poderia ser melhor trabalhado é a pesquisa. Enquanto esta aplicação faz simplesmente uma busca com GraphQL sobre campos pré-definidos, um retriever de documentos baseado em busca vetorial poderia ser utilizado para expandir o projeto para também lidar com documentos completos dos processos. Uma solução do tipo poderia ser implementada e testada com frameworks como [LangChain](https://js.langchain.com/v0.2/docs/introduction/).
 
 Além disso, pensando em um cenário de produção, a configuração de pipelines de CI/CD e a realização de um deploy utilizando os serviços de uma plataforma de computação em nuvem, como Microsoft Azure, também poderiam ser pontos a serem explorados.
 

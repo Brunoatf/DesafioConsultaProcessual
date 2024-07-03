@@ -4,7 +4,13 @@ Este é meu projeto para o desafio de consulta processual da Jusbrasil.
 
 Informações detalhadas sobre a implementação podem ser encontradas no arquivo `COMMENTS.md`, enquanto aqui tem-se apenas as instruções para execução e documentação da estrutura do projeto.
 
+Para melhor utilizar a aplicação, recomenda-se verificar primeiro o arquivo `backend/data/lawsuits.json` para verificar quais processos estão disponíveis para consulta.
+
+Uma maneira rápida de testar é pesquisar primeiro por tribunal, como `TJSP`, `TJMG` ou `TJRJ` e, em seguida, ir refinando os filtros de acordo com os resultados retornados.
+
 ## Execução do projeto
+
+### Com Docker Compose (recomendado):
 
 1 - Clone este repositório para sua máquina
 
@@ -12,11 +18,37 @@ Informações detalhadas sobre a implementação podem ser encontradas no arquiv
 
 3 - Abra o terminal na pasta raiz do projeto e execute `docker compose up`
 
-4 - A aplicação poderá ser utilizada em `localhost:3000`
+4 - A aplicação poderá ser utilizada a partir de `localhost:3000`
 
-Para melhor utilizar a aplicação, recomenda-se verificar primeiro o arquivo `backend/data/lawsuits.json` para verificar quais processos estão disponíveis para consulta.
+### Sem Docker
 
-Uma maneira rápida de testar é pesquisar primeiro por tribunal, como `TJSP`, `TJMG` ou `TJRJ` e, em seguida, ir refinando os filtros de acordo com os resultados retornados.
+#### Back-end
+
+1 - Instale o [Poetry](), caso não possua
+
+2 - Vá para o diretório `backend`, executando  `cd backend`
+
+2 - Execute `poetry install` para instalar as dependências em um novo ambiente virtual
+
+3 - Execute `poetry shell` para ativar o ambiente virtual do projeto
+
+4 - Execute `fastapi run src/main.py` para rodar a aplicação
+
+5 - Acesse a aplicação em `localhost:8000`, sendo possível realizar testes com GraphQL pela interface gráfica do Strawberry em `localhost:8000/graphql`
+
+#### Front-end
+
+1 - Para o funcionamento correto do front-end, garanta que o back-end já está rodando em `localhost:8000`
+
+2 - Instale o [Next.js](https://nextjs.org/), caso não possua
+
+3 - Vá para o diretório `frontend`, executando `cd frontend`
+
+4 - Instale as dependências com `npm install`
+
+5 - Execute a aplicação com `npm run dev`
+
+6 - Acesse a aplicação em `localhost:3000`
 
 ## Estrutura do projeto
 
@@ -40,6 +72,9 @@ O esquema abaixo representa os principais arquivos do código-fonte do sistema. 
         - `page.tsx` : página de pesquisa
       - `layout.tsx` : layout que engloba as páginas
       - `page.tsx` : página principal
+  - \_\_tests\_\_
+    - `LandingPageTest.tsx` : testes para a página principal
+    - `SearchPageTest.tsx` : testes para a página de pesquisa
 - backend
   - data
     - `lawsuits.json` : base de dados simulada composta por processos fictícios

@@ -1,4 +1,5 @@
 import json
+import os
 import typing
 from datetime import date
 
@@ -16,7 +17,10 @@ class LawsuitDatabase:
 
     @staticmethod
     def _load_lawsuits() -> dict:
-        with open("../data/lawsuits.json") as f:
+        data_file_path = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)), "../data/lawsuits.json"
+        )
+        with open(data_file_path) as f:
             lawsuits = json.load(f)
         for lawsuit in lawsuits:
             lawsuit["startDate"] = date.fromisoformat(lawsuit["startDate"])

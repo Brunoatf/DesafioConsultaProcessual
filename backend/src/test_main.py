@@ -1,15 +1,20 @@
 import json
+import os
 
 import pytest
 from fastapi.testclient import TestClient
 from main import app
+
+data_file_path = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "../data/lawsuits.json"
+)
 
 client = TestClient(app)
 
 
 @pytest.fixture(scope="session")
 def lawsuit_data():
-    with open("../data/lawsuits.json") as f:
+    with open(data_file_path) as f:
         data = json.load(f)
     return data
 

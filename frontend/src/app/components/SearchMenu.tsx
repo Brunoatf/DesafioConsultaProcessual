@@ -22,11 +22,11 @@ export default function SearchMenu() {
     setEndDate,
     warning,
     setWarning,
+    setReturnedData,
+    setHasSearched,
   } = useSearchContext();
 
   const router = useRouter();
-
-  const { setReturnedData, setHasSearched } = useSearchContext();
 
   const query = `
     query lawsuit($cnj: String, $court: String, $startDateInterval: Date, $endDateInterval: Date, $plaintiff: String, $defendant: String) {
@@ -44,19 +44,26 @@ export default function SearchMenu() {
     }
   `;
 
+  // Ao rodar pelo Docker Compose, a variável de ambiente backendUrl é definida como o endereço do backend na rede do Docker
+  // Senão, ao rodar localmente, o endereço padrão é http://localhost:8000
+  const apiUrl = process.env.backendUrl || "http://localhost:8000";
+
   const fetchData = async () => {
+
+    // Monta-se um objeto com as variáveis que estão não nulas:
     const variables = {
       ...(cnj && { cnj }),
       ...(court && { court }),
-      ...(startDate && { startDateInterval: startDate.toDate() }),
-      ...(endDate && { endDateInterval: endDate.toDate() }),
+      ...(startDate && { startDateInterval: startDate.format("YYYY-MM-DD") }),
+      ...(endDate && { endDateInterval: endDate.format("YYYY-MM-DD") }),
       ...(plaintiff && { plaintiff }),
       ...(defendant && { defendant }),
     };
 
     try {
+
       const response = await axios.post(
-        "http://localhost:8000/graphql",
+        apiUrl + "/graphql",
         {
           query,
           variables,

@@ -15,7 +15,7 @@ async def index():
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Adicione a origem do seu frontend
+    allow_origins=["http://localhost:3000"],  # permitir o acesso do frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
